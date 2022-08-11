@@ -1,0 +1,30 @@
+.Navigation {
+    margin-left: 50px;
+}
+.Menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.Menu-item {
+    padding: 0 10px;
+}
+
+.Unselected {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.Select {
+    color: #ffef11;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 2px solid #ffef11;
+}
+
+.Unselected:hover {
+    border-bottom: 2px solid #ffef11;
+}
