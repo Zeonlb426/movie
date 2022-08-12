@@ -5,7 +5,7 @@ function Video() {
   return (
     <div className='App'>
         <Header />
-        <div style={{ fontSize: '56px', fontWeight: 'bold', color: '#fff', padding: '50px' }}>Video page</div>
+        <div style={{ fontSize: '56px', fontWeight: 'bold', color: '#fff', padding: '300px 50px' }}>Video page</div>
     </div>
   );
 }
