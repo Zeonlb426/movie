@@ -11,6 +11,7 @@ const routes = [
     {path: '/about',    text: 'About'},
 ];
 
+
 function Menu() {
   return (
     <nav className="Navigation">

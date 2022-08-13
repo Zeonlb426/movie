@@ -10,6 +10,7 @@ function Home() {
   const [items, setItems] = useState([]);
   const [index, setIndex] = useState(0);
 
+
   useEffect(() => {
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=46b3d80e68c3305b185dc8a255c58fac&language=en-US&page=1")
       .then(res => res.json())
@@ -27,7 +28,7 @@ function Home() {
   }, [])
 
 
-  console.log(items[index] ?? 'gg');
+  // console.log(items[index] ?? 'gg');
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -37,7 +38,7 @@ function Home() {
     return (
       <div className='App'>
         <Header />
-        <Poster movie={items[index]}/>
+        <Poster movies={items} index={index}/>
         <div style={{ fontSize: '56px', fontWeight: 'bold', color: '#fff', padding: '300px 50px' }}>Home page</div>
       </div>
     );
