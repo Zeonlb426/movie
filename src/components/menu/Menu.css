@@ -1,30 +1,30 @@
-.Navigation {
+.navigation {
     margin-left: 50px;
 }
-.Menu {
+.menu {
     list-style: none;
     display: flex;
     padding: 0;
 }
 
-.Menu-item {
+.menu-item {
     padding: 0 10px;
 }
 
-.Unselected {
+.unselected {
     color: #fff;
     padding: 10px;
     text-decoration: none;
     border-bottom: 2px solid transparent;
 }
 
-.Select {
+.select {
     color: #ffef11;
     text-decoration: none;
     padding: 10px;
     border-bottom: 2px solid #ffef11;
 }
 
-.Unselected:hover {
+.unselected:hover {
     border-bottom: 2px solid #ffef11;
 }

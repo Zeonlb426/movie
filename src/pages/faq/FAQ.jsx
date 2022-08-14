@@ -3,7 +3,7 @@ import './FAQ.css'
 
 function FAQ() {
   return (
-    <div className='App'>
+    <div className='app'>
         <Header />
         <div style={{ fontSize: '56px', fontWeight: 'bold', color: '#fff', padding: '300px 50px' }}>FAQ page</div>
     </div>

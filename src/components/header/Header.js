@@ -7,16 +7,16 @@ import './Header.css'
 function Header() {
 
   return (
-    <div className="Header-block">
-      <header className="Header-content">
-        <div className="Block1">
-          <img src={logo} className="App-logo" alt=""/>
+    <div className="header-block">
+      <header className="header-content">
+        <div className="block1">
+          <img src={logo} className="app-logo" alt=""/>
           <Menu />
         </div>
-        <div className="Block2">
-          <img src={search} className="App-search" alt=""/>
-          <div className="User">
-            <img src={avatar} className="App-avatar" alt=""/>
+        <div className="block2">
+          <img src={search} className="app-search" alt=""/>
+          <div className="user">
+            <img src={avatar} className="app-avatar" alt=""/>
             <span>John Glich</span>
           </div>
         </div>

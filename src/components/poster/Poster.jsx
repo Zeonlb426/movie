@@ -1,40 +1,54 @@
-
+import React, { useState } from "react";
+import { Navigation} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import './Poster.css'
 
 function Poster(props) {
 
-    const {movies, index}= props;
+    const {movies}= props;
 
-    // console.log(movie);
+    const [movie, setMovie] = useState(movies[Math.floor(Math.random() * 19)]);
 
     const divStyle = {
-        color: '#fff',
-        backgroundImage: 'url(https://image.tmdb.org/t/p/original' + movies[index].backdrop_path + ')',
-      };
+        backgroundImage: 'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')',
+    };
 
   return (
-    <div className="Poster" style={divStyle}>
-        <div className='Poster-dark'>
-            <div className='Container'>
-                <div className='Poster-content'>
-                    <span className='Poster-title'>{movies[index].original_title}</span>
-                    <p className='Poster-description'>{movies[index].overview}</p>
-                    <div className='Poster-data'><span className='Poster-data-title'>Release date:</span> <span className='Poster-data-accent'>{movies[index].release_date}</span></div>
-                    <div className='Poster-data'><span className='Poster-data-title'>Rating:</span> <span className='Poster-data-accent'>{movies[index].vote_average}</span></div>
-                    <div className='Poster-data'><span className='Poster-data-title'>Vote count:</span> <span className='Poster-data-accent'>{movies[index].vote_count}</span></div>
-                    
-                    <div className='Poster-carusel'>
-                        {movies.map((movie, key) => (
-                            <a href='#'>
-                               <div className='Poster-element'>
-                                    <img className='Poster-img' src={'https://image.tmdb.org/t/p/w220_and_h330_face'+ movie.poster_path} alt=''/>
-                                    <div className='Poster-average'>{movie.vote_average}</div>
-                                </div>
-                            </a>
-                        ))}
+    <div className="poster" style={divStyle}>
+        <div className='poster-dark'>
+            <div className='container'>
+                <div className='poster-content'>
+                    <span className='poster-title'>{movie.original_title}</span>
+                    <div className='poster-text'>{movie.overview}</div>
+                    <div className="poster-statistic">
+                        <div className='poster-data'>
+                            <span className='poster-data-title'>Release date:</span>
+                            <span className='poster-data-accent'>{movie.release_date}</span>
+                        </div>
+                        <div className='poster-data'>
+                            <span className='poster-data-title'>Rating:</span>
+                            <span className='poster-data-accent'>{movie.vote_average}</span>
+                        </div>
+                        <div className='poster-data'>
+                            <span className='poster-data-title'>Vote count:</span>
+                            <span className='poster-data-accent'>{movie.vote_count}</span>
+                        </div>
                     </div>
-
-                </div>
+                </div>    
+                <div className='poster-carusel'>
+                    <Swiper modules={[Navigation]} navigation spaceBetween={30} slidesPerView={5}>
+                        {movies.map((movie, index) => (
+                            <SwiperSlide key={index}>
+                            <div className='poster-element' onClick={(event, key=index) => setMovie(movies[index])}>
+                                <img className='poster-img' src={'https://image.tmdb.org/t/p/w220_and_h330_face'+ movie.poster_path} alt='Poster movie'/>
+                                <div className='poster-average'>{movie.vote_average}</div>
+                            </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>                
             </div>
         </div>
     </div>

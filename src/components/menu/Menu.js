@@ -14,12 +14,12 @@ const routes = [
 
 function Menu() {
   return (
-    <nav className="Navigation">
-        <ul className="Menu">
+    <nav className="navigation">
+        <ul className="menu">
             {routes.map((route, index) => (
-                <li className="Menu-item" key={index}>
+                <li className="menu-item" key={index}>
                     <NavLink 
-                        className={({isActive}) => isActive ? "Select" : "Unselected" }
+                        className={({isActive}) => isActive ? "select" : "unselected" }
                         to={route.path}
                     >
                         {route.text}
